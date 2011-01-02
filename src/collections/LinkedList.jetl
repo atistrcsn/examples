@@ -6,7 +6,7 @@ class LinkedList<T> : IMutableList<T> {
 
   private var head : Item = null
   private var tail : Item = null
-  override var size  get private set;
+  override var size get private set
 
   override fun add(index : Int, value : T) {
     size++

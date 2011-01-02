@@ -6,8 +6,10 @@ enum class List<out T>(theSize : Int) : IList<T> {
   override val size : Int
     get() = theSize
 
+
   override val isEmpty : Boolean
     get() = this == Nil
+
 
   override fun iterator() = new IIterator() {
     private var current = List.this

@@ -5,12 +5,12 @@ class BinaryHeap<T> : IPriorityQueue<T> {
   this(data : IIterable<T>, compare : Comparison<T> = naturalOrder<T>) {
     this.compare = compare
     this.data = ArrayList(data)
-    siftDown(* this.data.size / 2 .. 0)
-/*
+//    siftDown(* this.data.size / 2 .. 0)
+
     for (val i in data.size / 2 .. 0) {
       siftDown(i)
     }
-*/
+
   }
 
   this(compare : Comparison<T>) {

@@ -28,18 +28,19 @@ class FileInput : IIterator<Byte>, JavaCloseableWrapper {
     }
     return
   }
-
+  
   override val hasNext
     get() { // implicitly throws IOException
       if (nextUsed && next != -1) {
         nextUsed = false
         next = stream.read() // throws IOException
       }
-      return next != -1
+      return next != -1        
     }
+
 }
 
-class FileOutput throws IOException : IAdder<Byte>, JavaCloseableWrapper {
+class FileOutput : IAdder<Byte>, JavaCloseableWrapper {
   private val stream : OutputStream
 
   this(file : File) : JavaCloseableWrapper(stream) {
@@ -53,8 +54,8 @@ class FileOutput throws IOException : IAdder<Byte>, JavaCloseableWrapper {
 
 fun example() { // this does not rethrow, no appropriate parameters given
 
-  val f1 : File = ...
-  val f2 : File = ...
+  val f1 : File //= ...
+  val f2 : File //= ...
 
   streamCopy(FileInput(f1), f2) // throws IOException, you must catch or rethrow explicitly
 
