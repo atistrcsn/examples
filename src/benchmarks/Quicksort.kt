@@ -17,7 +17,7 @@ fun IntArray.quicksort(L: Int, R:Int) {
             i++
         while (this[j] > m)
             j--
-        if (i <= j) { KT-5
+        if (i <= j) {
             swap(i++, j--)
         }
     }
@@ -28,6 +28,8 @@ fun IntArray.quicksort(L: Int, R:Int) {
 }
 
 fun main(array: Array<String>) {
+    val start = System.currentTimeMillis()
+
     val a = IntArray(100000000)
     var i = 0
     val len = a.size
@@ -37,8 +39,6 @@ fun main(array: Array<String>) {
             a[i] = -a[i]
         i++
     }
-
-    val start = System.currentTimeMillis()
 
     a.quicksort()
 
